@@ -24,7 +24,54 @@ editorBody.addEventListener("click", (e) => {
 });
 
 /* =========================================================
-   2. NAVEGACIÓN POR PESTAÑAS (tabs arriba del contenido)
+   2. LIGHTBOX: ampliar la foto de perfil al hacer click
+   ========================================================= */
+const avatarTrigger = document.getElementById("avatarTrigger");
+const avatarImg = document.querySelector(".profile__avatar-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
+
+function openLightbox() {
+  // Si la foto no cargó (se está mostrando el fallback de iniciales), no hay nada que agrandar
+  if (avatarImg.style.display === "none") return;
+
+  lightboxImg.src = avatarImg.src;
+  lightbox.hidden = false;
+  document.body.style.overflow = "hidden"; // evita que se scrollee el fondo
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  document.body.style.overflow = "";
+  avatarTrigger.focus();
+}
+
+avatarTrigger.addEventListener("click", openLightbox);
+
+// Accesibilidad: que también funcione con Enter o espacio, no solo con el mouse
+avatarTrigger.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openLightbox();
+  }
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+// Cerrar al hacer click en el fondo oscuro (pero no si se clickea la imagen)
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+});
+
+/* =========================================================
+   3. NAVEGACIÓN POR PESTAÑAS (tabs arriba del contenido)
    Al hacer click en una pestaña, hacemos scroll a esa sección.
    ========================================================= */
 document.querySelectorAll(".tab").forEach((tab) => {
@@ -35,7 +82,7 @@ document.querySelectorAll(".tab").forEach((tab) => {
 });
 
 /* =========================================================
-   3. SCROLL SPY
+   4. SCROLL SPY
    Detecta qué sección está visible y marca la pestaña/link
    correspondiente como activa. Usa IntersectionObserver,
    que es mucho más eficiente que calcular scroll a mano.
@@ -63,7 +110,7 @@ const spyObserver = new IntersectionObserver(
 sections.forEach((section) => spyObserver.observe(section));
 
 /* =========================================================
-   4. ANIMACIÓN DE ENTRADA (fade-in al hacer scroll)
+   5. ANIMACIÓN DE ENTRADA (fade-in al hacer scroll)
    ========================================================= */
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -80,7 +127,7 @@ const revealObserver = new IntersectionObserver(
 sections.forEach((section) => revealObserver.observe(section));
 
 /* =========================================================
-   5. EFECTO DE TIPEO en el saludo principal
+   6. EFECTO DE TIPEO en el saludo principal
    ========================================================= */
 const typedTextEl = document.getElementById("typedText");
 // ✏️ EDITAR: cambiá este texto por tu propia frase de presentación
@@ -97,7 +144,7 @@ function typeWriter() {
 typeWriter();
 
 /* =========================================================
-   6. RELOJ EN VIVO (barra de estado, abajo)
+   7. RELOJ EN VIVO (barra de estado, abajo)
    ========================================================= */
 const clockEl = document.getElementById("clock");
 
@@ -111,19 +158,19 @@ updateClock();
 setInterval(updateClock, 1000 * 30); // se actualiza cada 30 segundos, no hace falta cada segundo
 
 /* =========================================================
-   7. AÑO ACTUAL en el copyright (para no tener que editarlo cada año)
+   8. AÑO ACTUAL en el copyright (para no tener que editarlo cada año)
    ========================================================= */
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* =========================================================
-   8. FORMULARIO DE CONTACTO
+   9. FORMULARIO DE CONTACTO
    Usamos Formspree (https://formspree.io) para recibir los
    mensajes por email sin necesidad de programar un backend.
 
    ✏️ EDITAR: reemplazá "TU_ID_AQUI" por el endpoint que te da
    Formspree al crear tu cuenta gratuita (paso explicado en el README).
    ========================================================= */
-const FORM_ENDPOINT = "https://formspree.io/f/xwvdlpep";
+const FORM_ENDPOINT = "https://formspree.io/f/TU_ID_AQUI";
 
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");

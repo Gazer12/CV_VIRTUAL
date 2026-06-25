@@ -39,7 +39,8 @@
       <aside class="sidebar" id="sidebar">
         <div class="profile">
           <!-- ✏️ EDITAR: reemplazá "assets/foto-perfil.jpg" por el nombre real de tu foto -->
-          <div class="profile__avatar">
+          <div class="profile__avatar" id="avatarTrigger" role="button" tabindex="0"
+               aria-label="Ver foto de perfil en grande" aria-haspopup="dialog">
             <img src="foto_CV.png" alt="Foto de perfil de Mario" class="profile__avatar-img"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <span class="profile__avatar-fallback">MB</span>
@@ -87,9 +88,7 @@
           <section id="sobre-mi" class="panel">
             <p class="panel__comment">/** Sobre mí */</p>
 
-            <h2 class="hero-line">
-              const desarrollador = <span class="str">"Mario"</span>;
-            </h2>
+            
 
             <p class="hero-tagline">
               <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
@@ -102,7 +101,7 @@
                de datos y la administración de sistemas, buscando constantemente ampliar mis conocimientos y mantenerme actualizado 
                sobre las nuevas tendencias del sector.
             </p>
-                 <!--
+                <!--
                 <ul class="facts">
                   <li><span class="facts__num">+6</span> meses aprendiendo a programar</li>
                   <li><span class="facts__num">3</span> proyectos personales</li>
@@ -217,7 +216,7 @@
                 <p class="terminal__output">¡Hablemos!</p>
                 <!-- ✏️ EDITAR: tus datos reales de contacto -->
                 <p><span class="prompt">$</span> contact <span class="flag">--email</span> <a href="mailto:mariobalbuena233@gmail.com">mariobalbuena233@gmail.com</a></p>
-                <p><span class="prompt">$</span> contact <span class="flag">--linkedin</span> <a href="https://www.linkedin.com/in/mario-balbuena-yusva-33322a30a/" target="_blank" rel="noopener">/Mario Juan Salvador Balbuena Yusva</a></p>
+                <p><span class="prompt">$</span> contact <span class="flag">--linkedin</span> <a href="https://www.linkedin.com/in/mario-balbuena-yusva-33322a30a/" target="_blank" rel="noopener">/Mario Balbuena</a></p>
                 <p><span class="prompt">$</span> contact <span class="flag">--github</span> <a href="https://github.com/Gazer12" target="_blank" rel="noopener">/Mario Balbuena</a></p>
                 <p><span class="prompt">$</span><span class="cursor" aria-hidden="true">_</span></p>
               </div>
@@ -263,6 +262,12 @@
 
       </div>
     </div>
+  </div>
+
+  <!-- ===== LIGHTBOX: foto de perfil ampliada ===== -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto de perfil ampliada">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen">✕</button>
+    <img src="" alt="Foto de perfil ampliada" class="lightbox__img" id="lightboxImg">
   </div>
 
   <script src="js/script.js"></script>
