@@ -167,7 +167,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
    Usamos Formspree (https://formspree.io) para recibir los
    mensajes por email sin necesidad de programar un backend.
 
-   ✏️ EDITAR: reemplazá "TU_ID_AQUI" por el endpoint que te da
+  
    Formspree al crear tu cuenta gratuita (paso explicado en el README).
    ========================================================= */
 const FORM_ENDPOINT = "https://formspree.io/f/xwvdlpep";
