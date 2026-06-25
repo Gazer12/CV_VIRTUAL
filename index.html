@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario — Desarrollador/a Web</title>
+  <meta name="description" content="CV virtual de Tu Nombre, desarrollador/a web. Tecnologías, proyectos y contacto.">
+
+  <!-- Favicon hecho con un emoji, truco simple sin necesidad de un archivo .ico -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%BB</text></svg>">
+
+  <!-- Google Fonts: una familia para texto y otra monoespaciada para el "look" de código -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="editor-window">
+
+    <!-- ===== BARRA SUPERIOR (como la barra de título de un editor) ===== -->
+    <header class="titlebar">
+      <div class="titlebar__dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="titlebar__path">Mario-cv — visual-studio-code</span>
+      <button class="titlebar__menu-btn" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="editor-body" id="editorBody">
+
+      <!-- ===== SIDEBAR (explorador de archivos) ===== -->
+      <aside class="sidebar" id="sidebar">
+        <div class="profile">
+          <!-- ✏️ EDITAR: reemplazá "assets/foto-perfil.jpg" por el nombre real de tu foto -->
+          <div class="profile__avatar">
+            <img src="foto_CV.png" alt="Foto de perfil de Mario" class="profile__avatar-img"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="profile__avatar-fallback">MB</span>
+          </div>
+          <!-- ✏️ EDITAR: tu nombre y rol -->
+          <h1 class="profile__name">MARIO JUAN SALVADOR BALBUENA YUSVA</h1>
+          <p class="profile__role">Desarrollador/a Web Junior</p>
+          <p class="profile__status">
+            <span class="status-dot"></span>
+            Disponible para nuevas oportunidades
+          </p>
+        </div>
+
+        <nav class="file-explorer" aria-label="Secciones del CV">
+          <p class="file-explorer__title">EXPLORADOR</p>
+          <ul>
+            <li><a href="#sobre-mi" class="file-link" data-target="sobre-mi"><span class="file-icon">📄</span> sobre-mi.md</a></li>
+            <li><a href="#tecnologias" class="file-link" data-target="tecnologias"><span class="file-icon">📦</span> tecnologias.json</a></li>
+            <li><a href="#proyectos" class="file-link" data-target="proyectos"><span class="file-icon">📁</span> proyectos/</a></li>
+            <li><a href="#contacto" class="file-link" data-target="contacto"><span class="file-icon">✉️</span> contacto.sh</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__socials">
+          <!-- ✏️ EDITAR: tus links reales -->
+          <a href="https://github.com/Gazer12" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/mario-balbuena-yusva-33322a30a/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </aside>
+
+      <!-- ===== PANEL PRINCIPAL ===== -->
+      <div class="main-panel">
+
+        <!-- Barra de pestañas, simula los archivos abiertos -->
+        <div class="tabbar" role="tablist" aria-label="Pestañas de navegación">
+          <button class="tab" data-target="sobre-mi"><span class="file-icon">📄</span> sobre-mi.md</button>
+          <button class="tab" data-target="tecnologias"><span class="file-icon">📦</span> tecnologias.json</button>
+          <button class="tab" data-target="proyectos"><span class="file-icon">📁</span> proyectos/</button>
+          <button class="tab" data-target="contacto"><span class="file-icon">✉️</span> contacto.sh</button>
+        </div>
+
+        <main class="content" id="contenido">
+
+          <!-- ===================== SOBRE MÍ ===================== -->
+          <section id="sobre-mi" class="panel">
+            <p class="panel__comment">/** Sobre mí */</p>
+
+            <h2 class="hero-line">
+              const desarrollador = <span class="str">"Mario"</span>;
+            </h2>
+
+            <p class="hero-tagline">
+              <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+            </p>
+
+            <!-- ✏️ EDITAR: tu presentación personal -->
+            <p class="panel__text">
+              Hola Soy <strong>MARIO</strong>,estudiante de Ingeniería en Sistemas de Información con un gran interés por la 
+              tecnología y el aprendizaje continuo. Me apasionan áreas como el desarrollo de software, la ciberseguridad, las bases
+               de datos y la administración de sistemas, buscando constantemente ampliar mis conocimientos y mantenerme actualizado 
+               sobre las nuevas tendencias del sector.
+            </p>
+                 <!--
+                <ul class="facts">
+                  <li><span class="facts__num">+6</span> meses aprendiendo a programar</li>
+                  <li><span class="facts__num">3</span> proyectos personales</li>
+                  <li><span class="facts__num">ES</span> Español nativo</li>
+                </ul>
+                -->
+              </section>
+            
+          <!-- ===================== TECNOLOGÍAS ===================== -->
+          <section id="tecnologias" class="panel">
+            <p class="panel__comment">/** Tecnologías */</p>
+            <h2 class="panel__title">tecnologias.json</h2>
+
+            <!-- ✏️ EDITAR: agrega/quita las tecnologías que sepas -->
+            <div class="tech-group">
+              <p class="tech-group__key">"lenguajes"<span class="colon">:</span></p>
+              <div class="chips">
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/html5/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">H</span></span><span class="chip__label">HTML</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/python/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">PY</span></span><span class="chip__label">PYTHON</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><span class="chip__icon-fallback chip__icon-fallback--static">PAS</span></span><span class="chip__label">PASCAL</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/c/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">C</span></span><span class="chip__label">C</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><span class="chip__icon-fallback chip__icon-fallback--static">SQL</span></span><span class="chip__label">SQL</span></span>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <p class="tech-group__key">"herramientas"<span class="colon">:</span></p>
+              <div class="chips">
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/git/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">GIT</span></span><span class="chip__label">Git</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/github/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">GH</span></span><span class="chip__label">GitHub</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/visualstudiocode/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">VSC</span></span><span class="chip__label">VS Code</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><span class="chip__icon-fallback chip__icon-fallback--static">OC</span></span><span class="chip__label">OpenCode</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/vercel/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">VC</span></span><span class="chip__label">Vercel</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/figma/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">FIG</span></span><span class="chip__label">Figma</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><span class="chip__icon-fallback chip__icon-fallback--static">ST</span></span><span class="chip__label">Stitche</span></span>
+                <span class="chip"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/microsoftexcel/6FCF97" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">XL</span></span><span class="chip__label">Microsoft Excel</span></span>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <p class="tech-group__key">"aprendiendo"<span class="colon">:</span></p>
+              <div class="chips">
+                <span class="chip chip--learning"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/postgresql/F2A33D" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">PG</span></span><span class="chip__label">PostgreSQL</span></span>
+                <span class="chip chip--learning"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/F2A33D" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">ND</span></span><span class="chip__label">Node.js</span></span>
+                <span class="chip chip--learning"><span class="chip__icon-wrap"><img src="https://cdn.simpleicons.org/javascript/F2A33D" alt="" class="chip__icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><span class="chip__icon-fallback">JS</span></span><span class="chip__label">javascript</span></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== PROYECTOS ===================== -->
+          <section id="proyectos" class="panel">
+            <p class="panel__comment">/** Proyectos */</p>
+            <h2 class="panel__title">proyectos/</h2>
+
+            <!-- ✏️ EDITAR: reemplaza por tus proyectos reales -->
+            <div class="projects-grid">
+
+              <article class="project-card">
+                <p class="project-card__path"><span class="file-icon">📁</span> proyecto-1/</p>
+                <h3>Sistema de Gestión de Inventario</h3>
+                <p>Aplicación web desarrollada para administrar el stock de productos de manera eficiente. Permite registrar productos, 
+                  controlar entradas y salidas de inventario, visualizar alertas de bajo stock y consultar el historial completo de 
+                  movimientos, manteniendo el stock actualizado en tiempo real.</p>
+                <div class="chips">
+                  <span class="chip chip--sm"><span class="chip__label">HTML</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">CSS</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">PYTHON</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">FLASK</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">MYSQL</span></span>
+                  
+                </div>
+                <div class="project-card__links">
+                   <!--<a href="#" target="_blank" rel="noopener">Ver demo →</a>-->
+                  <a href="https://github.com/Gazer12/PORTAFOLIO/tree/main/SISTEMA%20DE%20INVENTARIO" target="_blank" rel="noopener">Código</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <p class="project-card__path"><span class="file-icon">📁</span> proyecto-2/</p>
+                <h3>Sistema de Turnos Médicos</h3>
+                <p>Aplicación web desarrollada para la gestión de turnos médicos, permitiendo a profesionales y pacientes administrar 
+                  reservas, disponibilidad y consultas desde una interfaz moderna y responsiva. El sistema incluye autenticación de 
+                  usuarios, gestión de clientes y profesionales, y control de turnos en tiempo real mediante una API REST.</p>
+                <div class="chips">
+                  <span class="chip chip--sm"><span class="chip__label">HTML</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">CSS</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">PYTHON</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">FLASK</span></span>
+                  <span class="chip chip--sm"><span class="chip__label">MYSQL</span></span>
+                </div>
+                <div class="project-card__links">
+                  <!--<a href="#" target="_blank" rel="noopener">Ver demo →</a>-->
+                  <a href="https://github.com/Gazer12/PORTAFOLIO/tree/main/SISTEMAS%20DE%20TURNOS" target="_blank" rel="noopener">Código</a>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- ===================== CONTACTO ===================== -->
+          <section id="contacto" class="panel">
+            <p class="panel__comment">/** Contacto */</p>
+            <h2 class="panel__title">contacto.sh</h2>
+
+            <div class="terminal">
+              <div class="terminal__bar">
+                <span></span><span></span><span></span>
+                <p>bash — contacto</p>
+              </div>
+              <div class="terminal__body">
+                <p><span class="prompt">$</span> echo <span class="str">"¡Hablemos!"</span></p>
+                <p class="terminal__output">¡Hablemos!</p>
+                <!-- ✏️ EDITAR: tus datos reales de contacto -->
+                <p><span class="prompt">$</span> contact <span class="flag">--email</span> <a href="mailto:mariobalbuena233@gmail.com">mariobalbuena233@gmail.com</a></p>
+                <p><span class="prompt">$</span> contact <span class="flag">--linkedin</span> <a href="https://www.linkedin.com/in/mario-balbuena-yusva-33322a30a/" target="_blank" rel="noopener">/Mario Juan Salvador Balbuena Yusva</a></p>
+                <p><span class="prompt">$</span> contact <span class="flag">--github</span> <a href="https://github.com/Gazer12" target="_blank" rel="noopener">/Mario Balbuena</a></p>
+                <p><span class="prompt">$</span><span class="cursor" aria-hidden="true">_</span></p>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <p class="contact-form__hint">O escribime directamente desde acá:</p>
+
+              <div class="field">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+              </div>
+
+              <div class="field">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Contame en qué puedo ayudarte..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <span class="btn-submit__text">Enviar mensaje</span>
+              </button>
+
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+
+        </main>
+
+        <!-- ===== BARRA DE ESTADO (como la de abajo en VS Code) ===== -->
+        <footer class="statusbar">
+          <span>🌿 main</span>
+          <span>UTF-8</span>
+          <span>JavaScript</span>
+          <span class="statusbar__clock" id="clock"></span>
+          <span class="statusbar__spacer"></span>
+          <span class="statusbar__copy">// © <span id="year"></span> Tu Nombre</span>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
