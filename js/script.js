@@ -170,7 +170,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
    ✏️ EDITAR: reemplazá "TU_ID_AQUI" por el endpoint que te da
    Formspree al crear tu cuenta gratuita (paso explicado en el README).
    ========================================================= */
-const FORM_ENDPOINT = "https://formspree.io/f/TU_ID_AQUI";
+const FORM_ENDPOINT = "https://formspree.io/f/xwvdlpep";
 
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
